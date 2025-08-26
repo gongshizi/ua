@@ -49,3 +49,27 @@
   color:#5a6777;
   line-height:1.45;
 }
+
+/* Hero 通用增强：加暗色遮罩、限制面板宽度、避免和背景“打架” */
+.hero{ position:relative; min-height:56vh; background-size:cover; background-position:center; }
+.hero::before{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(0,20,40,.55), rgba(0,20,40,.35));
+  z-index:0;
+}
+.hero .inner{
+  position:relative; z-index:1;
+  max-width: 960px; width:100%;
+  margin: 0 auto;
+  padding: 24px 32px;
+  border-radius: 16px;
+  background: rgba(10, 30, 50, .48);      /* 比原来更轻薄的玻璃效果 */
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+@media (max-width: 992px){
+  .hero{ min-height:44vh; }
+  .hero .inner{ padding: 16px 18px; }
+}
+
+/* About 页单独的背景位置（稍微上移，避开亮区） */
+.hero-about{ background-position: center 30%; }
