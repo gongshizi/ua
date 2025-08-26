@@ -12,3 +12,42 @@
 .footer{background:#0b1020;color:#b9c2cf}
 .footer a{color:#d6e6ff;text-decoration:none}
 .table-about td{padding:.4rem .6rem;border-bottom:1px solid #eee}
+/* —— Services 卡片修复 —— */
+.card-service{
+  border:1px solid #e9edf2;
+  border-radius:14px;
+  overflow:hidden;               /* 切掉溢出，避免图片压到文字 */
+  box-shadow:0 10px 22px rgba(10,42,82,.08);
+  display:flex;
+  flex-direction:column;
+}
+.card-service .img-wrap{
+  height: 240px;                  /* 统一高度：可按需要调 220~280 */
+  overflow:hidden;
+}
+@media (max-width: 992px){
+  .card-service .img-wrap{ height: 200px; }
+}
+.card-service .img-wrap img{
+  width:100%;
+  height:100%;
+  object-fit:cover;               /* 保持裁切不拉伸 */
+  display:block;
+}
+.card-service .card-body{
+  padding:18px 18px 20px;
+  background:#fff;
+  flex:1 1 auto;                  /* 文字区撑满剩余空间 */
+}
+.card-service .card-title{ 
+  margin: 0 0 8px;
+  font-weight:700;
+  font-size:1.25rem;
+}
+.card-service .card-text{
+  margin:0;
+  color:#5a6777;
+  line-height:1.45;
+}
+
+
