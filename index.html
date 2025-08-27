@@ -1,99 +1,153 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UA Technology</title>
-<link rel="icon" href="assets/about.png" type="image/png">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="style.css"></head><body>
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="index.html">UA Technology</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
-    <div class="collapse navbar-collapse" id="nav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UA Technology</title>
+  <link rel="icon" href="assets/about.png" type="image/png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 
-<header class="hero" style="background-image:url('assets/hero1.png');">
-  <div class="inner container">
-    <h1 class="display-5 fw-bold">UA Technology</h1>
-    <p class="lead">Television Repair • Refurbishment • Wholesale</p>
-    <a class="btn btn-light btn-lg me-2" href="services.html">Our Services</a>
-    <a class="btn btn-outline-light btn-lg" href="contact.html">Contact Us</a>
-  </div>
-</header>
+  <!-- 最小化的兜底样式：确保 Services 卡片不重叠（即使 style.css 未更新也安全） -->
+  <style>
+    .navbar{background:linear-gradient(90deg,#0a2a52,#0e447e);}
+    .small-muted{color:#6c757d}
+    /* Services 卡片结构（与我之前给的 style.css 建议一致） */
+    .card-service{border:1px solid #e9edf2;border-radius:14px;overflow:hidden;box-shadow:0 10px 22px rgba(10,42,82,.08);display:flex;flex-direction:column;background:#fff}
+    .card-service .img-wrap{height:240px;overflow:hidden}
+    @media (max-width: 992px){.card-service .img-wrap{height:200px}}
+    .card-service .img-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+    .card-service .card-body{padding:18px 18px 20px;flex:1 1 auto}
+    .card-service .card-title{margin:0 0 8px;font-weight:700;font-size:1.1rem}
+    .card-service .card-text{margin:0;line-height:1.5;color:#5a677d}
 
-<section class="section">
-  <div class="container">
-    <div class="row g-4 align-items-center">
-      <div class="col-lg-6">
-        <h2 class="fw-bold">We keep televisions working — sustainably.</h2>
-        <p class="small-muted">With years of hands-on experience, we repair and refurbish televisions from leading brands, supplying wholesale and retail clients across Australia.</p>
-        <ul class="small-muted">
-          <li>In‑house & on‑site TV repair</li>
-          <li>Refurbishment & quality control</li>
-          <li>Wholesale distribution</li>
-          <li>Spare parts supply</li>
+    /* Hero 遮罩（可读性更好） */
+    .hero{position:relative;min-height:56vh;background-size:cover;background-position:center}
+    .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,20,40,.45),rgba(0,20,40,.25));z-index:0}
+    .hero .inner{position:relative;z-index:1;max-width:960px}
+  </style>
+</head>
+<body>
+  <!-- 顶部导航 -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">UA Technology</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
       </div>
-      <div class="col-lg-6">
-        <img class="img-fluid rounded shadow" src="assets/gallery1.png" alt="Multiple TVs">
-      </div>
     </div>
-  </div>
-</section>
+  </nav>
 
-<section class="section pt-0">
-  <div class="container text-center">
-    <h3 class="mb-4">Our Services</h3>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card card-service shadow-sm h-100">
-          <img src="assets/service_all.png" class="card-img-top" alt="Services">
-          <div class="card-body"><h5 class="card-title">Television Repair</h5><p class="card-text small-muted">Professional in‑house and on‑site services.</p></div>
+  <!-- 顶部横幅（使用 hero1.png；若你已换新的无文字图，也可改为 hero2.png） -->
+  <header class="hero" style="background-image:url('assets/hero1.png');">
+    <div class="inner container text-white py-5">
+      <h1 class="display-5 fw-bold">UA Technology</h1>
+      <p class="lead mb-4">Television Repair • Refurbishment • Wholesale</p>
+      <a class="btn btn-light btn-lg me-2" href="services.html">Our Services</a>
+      <a class="btn btn-outline-light btn-lg" href="contact.html">Contact Us</a>
+    </div>
+  </header>
+
+  <!-- 简介区 -->
+  <section class="section py-5">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6">
+          <h2 class="fw-bold">We keep televisions working — sustainably.</h2>
+          <p class="small-muted">
+            With years of hands-on experience, we repair and refurbish televisions from leading brands,
+            supplying wholesale and retail clients across Australia.
+          </p>
+          <ul class="small-muted mb-0">
+            <li>In-house & on-site TV repair</li>
+            <li>Refurbishment & quality control</li>
+            <li>Wholesale distribution</li>
+            <li>Spare parts supply</li>
+          </ul>
+        </div>
+        <div class="col-lg-6">
+          <img class="img-fluid rounded shadow" src="assets/gallery1.png" alt="Multiple TVs" />
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card card-service shadow-sm h-100">
-          <img src="assets/gallery3.png" class="card-img-top" alt="Refurbishment">
-          <div class="card-body"><h5 class="card-title">Refurbishment & QC</h5><p class="card-text small-muted">Testing, repair and return-to-service workflow.</p></div>
+    </div>
+  </section>
+
+  <!-- 我们的服务（已统一卡片结构与高度） -->
+  <section class="section pt-0 pb-5">
+    <div class="container text-center">
+      <h3 class="mb-4">Our Services</h3>
+      <div class="row g-4">
+        <!-- Card 1 -->
+        <div class="col-md-4">
+          <article class="card card-service h-100">
+            <div class="img-wrap">
+              <!-- 你也可以换成新的服务图：service_repair.png -->
+              <img src="assets/service_all.png" alt="Television Repair" />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Television Repair</h5>
+              <p class="card-text small-muted">Professional in-house and on-site services.</p>
+            </div>
+          </article>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card card-service shadow-sm h-100">
-          <img src="assets/gallery2.png" class="card-img-top" alt="Wholesale TV">
-          <div class="card-body"><h5 class="card-title">Wholesale & Parts</h5><p class="card-text small-muted">Bulk supply of refurbished TVs and genuine parts.</p></div>
+
+        <!-- Card 2 -->
+        <div class="col-md-4">
+          <article class="card card-service h-100">
+            <div class="img-wrap">
+              <!-- 可替换为 service_refurb.png -->
+              <img src="assets/gallery3.png" alt="Refurbishment & QC" />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Refurbishment &amp; QC</h5>
+              <p class="card-text small-muted">Testing, repair and return-to-service workflow.</p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-4">
+          <article class="card card-service h-100">
+            <div class="img-wrap">
+              <!-- 可替换为 service_wholesale.png -->
+              <img src="assets/gallery2.png" alt="Wholesale & Parts" />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Wholesale &amp; Parts</h5>
+              <p class="card-text small-muted">Bulk supply of refurbished TVs and genuine parts.</p>
+            </div>
+          </article>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section pt-0">
-  <div class="container">
-    <h3 class="mb-3 text-center">Recent Work</h3>
-    <div class="row g-3 gallery">
-      <div class="col-6 col-md-4"><img class="w-100 shadow" src="assets/gallery1.png" alt=""></div>
-      <div class="col-6 col-md-4"><img class="w-100 shadow" src="assets/gallery2.png" alt=""></div>
-      <div class="col-6 col-md-4"><img class="w-100 shadow" src="assets/gallery3.png" alt=""></div>
-      <div class="col-6 col-md-4"><img class="w-100 shadow" src="assets/gallery4.png" alt=""></div>
-      <div class="col-6 col-md-4"><img class="w-100 shadow" src="assets/gallery5.png" alt=""></div>
-      <div class="col-6 col-md-4"><img class="w-100 shadow" src="assets/gallery6.png" alt=""></div>
+  <!-- 轻量 CTA（替代删除的 Recent Work，避免页面空洞） -->
+  <section class="py-5" style="background:#0b1020;">
+    <div class="container text-center text-white">
+      <h4 class="mb-2">Need help with a TV today?</h4>
+      <p class="small-muted mb-3" style="color:#d2d9e3">Tell us the model and the fault. We'll reply with options and a quote.</p>
+      <a href="contact.html" class="btn btn-light btn-lg">Request a quote</a>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer class="footer py-4 mt-5">
-  <div class="container text-center">
-    <small>U ACE Pty Ltd as Trustee for Chen Family Trust — Trading as UA Technology</small><br>
-    <small>ABN: xxxxx</small><br>
-    <small>© 2025 UA Technology • All rights reserved.</small>
-  </div>
-</footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body></html>
+  <!-- 页脚 -->
+  <footer class="footer py-4">
+    <div class="container text-center">
+      <small>U ACE Pty Ltd as Trustee for Chen Family Trust — Trading as UA Technology</small><br />
+      <small>ABN: xxxxx</small><br />
+      <small>© 2025 UA Technology • All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
